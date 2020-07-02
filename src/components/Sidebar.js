@@ -6,7 +6,8 @@ import {
   List,
   ListItem,
   Typography,
-  Container,
+  ListItemIcon,
+  ListItemText,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -17,9 +18,12 @@ const useStyles = makeStyles({
   welcomeLogo: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     paddingBottom: "2em",
     paddingTop: "2em",
+  },
+  logoColor: {
+    color: "#229AF8",
   },
 });
 
@@ -27,15 +31,15 @@ const Sidebar = () => {
   const classes = useStyles();
   const listItems = [
     {
-      icon: "fas fa-home",
+      icon: "fas fa-home fa-2x",
       item: "Dashboard",
     },
     {
-      icon: "fas fa-users",
+      icon: "fas fa-users fa-2x",
       item: "Profile",
     },
     {
-      icon: "fas fa-credit-card",
+      icon: "fas fa-credit-card fa-2x",
       item: "Subscription",
     },
   ];
@@ -46,19 +50,36 @@ const Sidebar = () => {
       classes={{ paper: classes.paper }}
     >
       <div className={classes.welcomeLogo}>
-        <Icon className="fas fa-rocket" />
-        <Typography>Welcome, Ryan</Typography>
+        <Icon
+          className="fas fa-rocket"
+          fontSize="large"
+          classes={{ root: classes.logoColor }}
+        />
+        <Typography>
+          Welcome,{" "}
+          <Typography variant="span" className={classes.logoColor}>
+            Ryan
+          </Typography>
+        </Typography>
       </div>
       <Divider />
       <List>
         {listItems.map((item) => {
           return (
-            <ListItem>
+            <ListItem button>
+              <ListItemIcon className={item.icon} />
+              <ListItemText primary={item.item} />
+            </ListItem>
+          );
+        })}
+        {/*listItems.map((item) => {
+          return (
+            <ListItem button>
               <Icon className={item.icon} />
               <Typography>{item.item}</Typography>
             </ListItem>
           );
-        })}
+        })*/}
       </List>
     </Drawer>
   );
