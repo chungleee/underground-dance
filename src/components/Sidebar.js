@@ -58,7 +58,7 @@ const Sidebar = () => {
         />
         <Typography>
           Welcome,{" "}
-          <Typography variant="span" className={classes.logoColor}>
+          <Typography component="span" className={classes.logoColor}>
             Ryan
           </Typography>
         </Typography>
