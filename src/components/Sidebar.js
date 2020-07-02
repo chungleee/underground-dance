@@ -25,6 +25,7 @@ const useStyles = makeStyles({
   logoColor: {
     color: "#229AF8",
   },
+  icon: { marginRight: "2em" },
 });
 
 const Sidebar = () => {
@@ -67,19 +68,11 @@ const Sidebar = () => {
         {listItems.map((item) => {
           return (
             <ListItem button>
-              <ListItemIcon className={item.icon} />
+              <ListItemIcon className={`${item.icon} ${classes.icon}`} />
               <ListItemText primary={item.item} />
             </ListItem>
           );
         })}
-        {/*listItems.map((item) => {
-          return (
-            <ListItem button>
-              <Icon className={item.icon} />
-              <Typography>{item.item}</Typography>
-            </ListItem>
-          );
-        })*/}
       </List>
     </Drawer>
   );
