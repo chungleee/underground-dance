@@ -1,10 +1,14 @@
 import React from "react";
-import { Drawer, List, ListItem } from "@material-ui/core";
+import { Drawer, Icon, List, ListItem, Typography } from "@material-ui/core";
 
 const Dashboard = () => {
   return (
     <>
       <Drawer variant="permanent" anchor="left">
+        <Typography>
+          <Icon className="fas fa-rocket" />
+          Welcome, Ryan
+        </Typography>
         <List>
           <ListItem>Dashboard</ListItem>
           <ListItem>Profile</ListItem>
