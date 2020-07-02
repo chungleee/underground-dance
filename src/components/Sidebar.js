@@ -11,7 +11,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  sidebar: {
+  aside: {
     minWidth: "25%",
     borderRight: "1px solid lightgrey",
   },
@@ -45,7 +45,7 @@ const Sidebar = () => {
     },
   ];
   return (
-    <sidebar className={classes.sidebar}>
+    <aside className={classes.aside}>
       <div className={classes.welcomeLogo}>
         <Icon
           className="fas fa-rocket"
@@ -70,7 +70,7 @@ const Sidebar = () => {
           );
         })}
       </List>
-    </sidebar>
+    </aside>
   );
 };
 
