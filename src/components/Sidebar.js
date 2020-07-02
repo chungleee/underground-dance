@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Divider,
-  Drawer,
   Icon,
   List,
   ListItem,
@@ -12,8 +11,9 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  paper: {
-    minWidth: "300px",
+  sidebar: {
+    minWidth: "25%",
+    borderRight: "1px solid lightgrey",
   },
   welcomeLogo: {
     display: "flex",
@@ -45,11 +45,7 @@ const Sidebar = () => {
     },
   ];
   return (
-    <Drawer
-      variant="permanent"
-      anchor="left"
-      classes={{ paper: classes.paper }}
-    >
+    <sidebar className={classes.sidebar}>
       <div className={classes.welcomeLogo}>
         <Icon
           className="fas fa-rocket"
@@ -74,7 +70,7 @@ const Sidebar = () => {
           );
         })}
       </List>
-    </Drawer>
+    </sidebar>
   );
 };
 
